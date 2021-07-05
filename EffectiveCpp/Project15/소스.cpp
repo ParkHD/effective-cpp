@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 class GamePlayer {
 private :
 	enum 
@@ -9,7 +11,31 @@ private :
 
 class Temp
 {
-private :
-	static const int num;
+private:	
+	enum
+	{
+		Num = 3,
+	};
+	int score[Num];			// ¿À·ù!!
+public :
+	void Show()
+	{
+		cout << Num << endl;
+	}
+
 };
-const int Temp::num = 5;
+
+
+#define CALL_WITH_MAX(a, b) f((a) > (b)? (a) : (b))
+
+template<typename T>
+inline void callWithMax(const T& x, const T& y)
+{
+	return ((x > y) ? x : y);
+}
+int main()
+{
+	int x = 3;
+	int y = 5;
+	callWithMax(x, y);
+}
