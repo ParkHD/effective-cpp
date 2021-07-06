@@ -1,5 +1,13 @@
 #include <iostream>
 using namespace std;
+class GamePlayer2 {
+private :
+	enum 
+	{
+		FudgeFactor = 3,
+	};
+	int score[FudgeFactor];
+};
 class GamePlayer {
 private :
 	enum 
@@ -16,7 +24,7 @@ private:
 	{
 		Num = 3,
 	};
-	int score[Num];			// ¿À·ù!!
+	int score[Num];			// Â¿Ã€Â·Ã¹!!
 public :
 	void Show()
 	{
