@@ -24,7 +24,7 @@ private:
 	{
 		Num = 3,
 	};
-	int score[Num];			// ¿À·ù!!
+	int score[Num];			// ㅇㅇ
 public :
 	void Show()
 	{
