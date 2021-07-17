@@ -81,10 +81,7 @@ int funcB(int x)
 {
 	return x + 3;
 }
-int funcA(int x)
-{
-	return x * 3;
-}
+
 #include <array>
 #include <functional>
 bool IsOdd(const int& number)
