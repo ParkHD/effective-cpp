@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <tuple>
 using namespace std;
 class GamePlayer2 {
 private :
@@ -41,9 +43,77 @@ inline void callWithMax(const T& x, const T& y)
 {
 	return ((x > y) ? x : y);
 }
+
+void getSinCos(const double& degrees, double* sin_out, double* cos_out)
+{
+	static const double pi = 3.141592 / 180.0;
+	// static을 씀으로서 메모리낭비 줄이기
+
+	const double radians = degrees * pi;
+	// 안 바뀔 값들은 const를 넣는다. -> 오류줄이기
+
+	*sin_out = std::sin(radians);
+	*cos_out = std::cos(radians);
+}
+//int* getValue(int x)
+//{
+//	int value = x * 2;
+//	return &value;
+//}
+int* getValue(int x)
+{
+	int value = x * 2;
+	return &value;
+}
+int& getValue2(int x)
+{
+	int value = x * 2;
+	return value;
+}
+tuple<int, double, int> getTuple()
+{
+	int a = 10;
+	double b = 3.14;
+	int c = 5;
+	return make_tuple(a, b, c);
+}
+int funcB(int x)
+{
+	return x + 3;
+}
+int funcA(int x)
+{
+	return x * 3;
+}
+#include <array>
+#include <functional>
+bool IsOdd(const int& number)
+{
+	if (number % 2 != 0) return true;
+	else return false;
+}
+bool IsEven(const int& number)
+{
+	if (number % 2 == 0) return true;
+	else return false;
+}
+//void printNumbers(const array<int, 10> my_array, bool (*func)(const int&))
+//{
+//	for (auto element : my_array)
+//	{
+//		if (func(my_array[element]))
+//		{
+//			cout << my_array[element];
+//		}
+//	}
+//	cout << endl;
+//}
+
 int main()
 {
-	int x = 3;
-	int y = 5;
-	callWithMax(x, y);
+	vector<int> v{ 1,2,3 };
+	v.resize(2);
+
+	int* ptrv = v.data();
+	cout << ptrv[2] << endl;
 }
