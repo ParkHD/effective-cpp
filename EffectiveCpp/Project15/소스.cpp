@@ -105,12 +105,31 @@ bool IsEven(const int& number)
 //	}
 //	cout << endl;
 //}
+class A;
+class B
+{
+private:
+	int m_value = 1;
+
+public:
+	void doSomething(A& a);
+};
+class A
+{
+private:
+	int m_value = 1;
+
+	friend void B::doSomething(A& a);
+};
+
+void B::doSomething(A& a)
+{
+	cout << a.m_value << endl;
+}
 
 int main()
 {
-	vector<int> v{ 1,2,3 };
-	v.resize(2);
-
-	int* ptrv = v.data();
-	cout << ptrv[2] << endl;
+	A a;
+	B b;
+	b.doSomething(a);
 }
