@@ -47,7 +47,7 @@ inline void callWithMax(const T& x, const T& y)
 void getSinCos(const double& degrees, double* sin_out, double* cos_out)
 {
 	static const double pi = 3.141592 / 180.0;
-	// static을 씀으로서 메모리낭비 줄이기
+	// static을 씀으로서 메모리낭비 줄이기 한번만 선언함으로
 
 	const double radians = degrees * pi;
 	// 안 바뀔 값들은 const를 넣는다. -> 오류줄이기
