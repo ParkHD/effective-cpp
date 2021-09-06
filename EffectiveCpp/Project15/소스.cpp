@@ -50,7 +50,7 @@ void getSinCos(const double& degrees, double* sin_out, double* cos_out)
 	// static을 씀으로서 메모리낭비 줄이기 한번만 선언함으로
 
 	const double radians = degrees * pi;
-	// 안 바뀔 값들은 const를 넣는다. -> 오류줄이기
+	// 안 바뀔 값들은 const를 넣는다. -> 오류줄이기 가능
 
 	*sin_out = std::sin(radians);
 	*cos_out = std::cos(radians);
