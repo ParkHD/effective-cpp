@@ -45,7 +45,7 @@ inline void callWithMax(const T& x, const T& y)
 {
 	return ((x > y) ? x : y);
 }
-
+// static을 씀으로서 메모리낭비 줄이기 한번만 선언함으로
 void getSinCos(const double& degrees, double* sin_out, double* cos_out)
 {
 	static const double pi = 3.141592 / 180.0;
