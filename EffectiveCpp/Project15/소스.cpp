@@ -2,7 +2,6 @@
 #include <vector>
 #include <tuple>
 
-//모바일
 using namespace std;
 class GamePlayer2 {
 private :
